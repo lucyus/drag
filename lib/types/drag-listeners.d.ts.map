@@ -1,0 +1,1 @@
+{"version":3,"file":"drag-listeners.d.ts","sourceRoot":"","sources":["../../src/types/drag-listeners.ts"],"names":[],"mappings":"AAAA;;GAEG;AACH,oBAAY,aAAa,GAAG;IACxB,SAAS,EAAE,CAAC,KAAK,EAAE,GAAG,KAAK,IAAI,CAAC;IAChC,IAAI,EAAE,CAAC,KAAK,EAAE,GAAG,KAAK,IAAI,CAAC;IAC3B,OAAO,EAAE,CAAC,KAAK,EAAE,GAAG,KAAK,IAAI,CAAC;CACjC,CAAA"}

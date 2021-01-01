@@ -1,0 +1,1 @@
+{"version":3,"file":"drag-options.d.ts","sourceRoot":"","sources":["../../src/types/drag-options.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,sBAAsB,CAAC;AAEhD;;GAEG;AACH,oBAAY,WAAW,GAAG;IACtB,eAAe,CAAC,EAAE,QAAQ,GAAG,SAAS,CAAC;IACvC,MAAM,CAAC,EAAE,WAAW,GAAG,SAAS,CAAC;IACjC,WAAW,CAAC,EAAE,OAAO,GAAG,SAAS,CAAC;IAClC,QAAQ,CAAC,EAAE,WAAW,GAAG,SAAS,CAAC;CACtC,CAAA"}
