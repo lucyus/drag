@@ -1,0 +1,33 @@
+{
+  "name": "@lucyus/drag",
+  "version": "1.0.0",
+  "description": "Drag is a lightweight package made to drag DOM HTML elements easily.",
+  "main": "lib/index.js",
+  "types": "lib/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucyus/drag.git"
+  },
+  "keywords": [
+    "drag",
+    "draggable",
+    "dom",
+    "html",
+    "javascript",
+    "typescript"
+  ],
+  "author": "Lucyus",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/lucyus/drag/issues"
+  },
+  "homepage": "https://github.com/lucyus/drag#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  }
+}
