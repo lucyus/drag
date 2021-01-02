@@ -131,6 +131,18 @@ export declare class Drag {
      */
     protected _nearestBounds(position: Position): Position;
     /**
+     * Gathers the computed margin of a DOM HTML element
+     * @param element DOM HTML element
+     *
+     * @returns Computed margin of the element
+     */
+    protected _margin(element: HTMLElement): {
+        top: number;
+        left: number;
+        right: number;
+        bottom: number;
+    };
+    /**
      * Gathers the computed padding of a DOM HTML element
      * @param element DOM HTML element
      *
