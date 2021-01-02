@@ -1,6 +1,6 @@
 {
   "name": "@lucyus/drag",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Drag is a lightweight package made to drag DOM HTML elements easily.",
   "main": "lib/index.js",
   "types": "lib/",

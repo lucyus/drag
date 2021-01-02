@@ -166,6 +166,7 @@ export class Drag {
    * @param handle DOM HTML element used for dragging
    */
   public setHandle(handle: HTMLElement): void {
+    this._clearListeners();
     this._handle = handle;
     this._attachListeners();
   }
