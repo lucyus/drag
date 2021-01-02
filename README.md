@@ -72,7 +72,7 @@ In case you need to remove the boundary:
 ```js
 drag.removeBoundary();
 ```
-By default, there is no boundaries.
+By default, there are no boundaries.
 
 ### Handle
 
