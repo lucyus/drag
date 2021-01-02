@@ -211,10 +211,11 @@ export class Drag {
       return true;
     }
     const boundaryPadding = this._padding(this._boundary);
-    return position.x >= 0 - boundaryPadding.left &&
-      position.x <= this._boundary.clientWidth - this._htmlElement.clientWidth - boundaryPadding.right &&
-      position.y >= 0 - boundaryPadding.top &&
-      position.y <= this._boundary.clientHeight - this._htmlElement.clientHeight - boundaryPadding.bottom;
+    const dragMargin = this._margin(this._htmlElement);
+    return position.x >= 0 - boundaryPadding.left - dragMargin.left &&
+      position.x <= this._boundary.clientWidth - this._htmlElement.clientWidth - boundaryPadding.right - dragMargin.right &&
+      position.y >= 0 - boundaryPadding.top - dragMargin.top &&
+      position.y <= this._boundary.clientHeight - this._htmlElement.clientHeight - boundaryPadding.bottom - dragMargin.bottom;
   }
 
   /**
@@ -231,19 +232,36 @@ export class Drag {
       return nearestBounds;
     }
     const boundaryPadding = this._padding(this._boundary);
-    if (position.x < 0 - boundaryPadding.left) {
-      nearestBounds.x = 0 - boundaryPadding.left;
+    const dragMargin = this._margin(this._htmlElement);
+    if (position.x < 0 - boundaryPadding.left - dragMargin.left) {
+      nearestBounds.x = 0 - boundaryPadding.left - dragMargin.left;
     }
-    else if (position.x > this._boundary.clientWidth - this._htmlElement.clientWidth - boundaryPadding.right) {
-      nearestBounds.x = this._boundary.clientWidth - this._htmlElement.clientWidth - boundaryPadding.right;
+    else if (position.x > this._boundary.clientWidth - this._htmlElement.clientWidth - boundaryPadding.right - dragMargin.right) {
+      nearestBounds.x = this._boundary.clientWidth - this._htmlElement.clientWidth - boundaryPadding.right - dragMargin.right;
     }
-    if (position.y < 0 - boundaryPadding.top) {
-      nearestBounds.y = 0 - boundaryPadding.top;
+    if (position.y < 0 - boundaryPadding.top - dragMargin.top) {
+      nearestBounds.y = 0 - boundaryPadding.top - dragMargin.top;
     }
-    else if (position.y > this._boundary.clientHeight - this._htmlElement.clientHeight - boundaryPadding.bottom) {
-      nearestBounds.y = this._boundary.clientHeight - this._htmlElement.clientHeight - boundaryPadding.bottom;
+    else if (position.y > this._boundary.clientHeight - this._htmlElement.clientHeight - boundaryPadding.bottom - dragMargin.bottom) {
+      nearestBounds.y = this._boundary.clientHeight - this._htmlElement.clientHeight - boundaryPadding.bottom - dragMargin.bottom;
     }
     return nearestBounds;
+  }
+
+  /**
+   * Gathers the computed margin of a DOM HTML element
+   * @param element DOM HTML element
+   * 
+   * @returns Computed margin of the element
+   */
+  protected _margin(element: HTMLElement): { top: number, left: number, right: number, bottom: number } {
+    const elementStyle: CSSStyleDeclaration = getComputedStyle(element);
+    return {
+      top: parseFloat(elementStyle.getPropertyValue('margin-top')),
+      left: parseFloat(elementStyle.getPropertyValue('margin-left')),
+      right: parseFloat(elementStyle.getPropertyValue('margin-right')),
+      bottom: parseFloat(elementStyle.getPropertyValue('margin-bottom'))
+    };
   }
 
   /**
